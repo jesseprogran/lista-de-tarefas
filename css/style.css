@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@1&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@ body {
   align-items: center;
   height: 100vh;
   font-size: 16px;
-  background: #605555;
+  background: #c7bfbf;
   font-family: 'Abril Fatface', cursive;
 }
 
@@ -22,13 +22,20 @@ body {
   max-width: 600px;
 }
 
+h1 {
+  margin-left: 35px;
+  color: rgb(166, 166, 170);
+  letter-spacing: 6px;
+  box-shadow: 4px 5px 0px white;
+}
+
 .todolist header {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  padding: 15px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 30px;
   background-color: rgb(28, 28, 108);
   color: #fff;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .wrapper-list ul.list {
@@ -40,7 +47,6 @@ body {
 .wrapper-list ul.list li {
   position: relative;
   font-size: 30px;
-  font-family: 'Dancing Script', cursive;
   background-color: #4837a4;
   border-bottom: 1px solid #1c2340;
   color: #000000;
@@ -49,6 +55,15 @@ body {
   padding: 20px;
   transition: background-color 300ms ease;
 }
+
+.wrapper-list ul.list li.removed {
+  animation: collapseItem 300ms ease;
+}
+
+.wrapper-list ul.list li.hidden {
+  display: none;
+}
+
 
 .wrapper-list ul.list li:hover {
   background-color: #565e78;
@@ -123,7 +138,18 @@ body {
   outline: none;
   width: 90%;
   padding: 20px;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 2em;
   color: rgb(255, 255, 255);
+}
+
+
+@keyframes collapseItem {
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  100% {
+    transform: rotateX(-90deg);
+  }
 }
